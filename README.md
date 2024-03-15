@@ -12,6 +12,7 @@ Este archivo de configuración está escrito en el lenguaje de definición de re
 
 *Este bloque define el proveedor que se utilizará, en este caso, azurerm para Microsoft Azure. El bloque features {} se utiliza para activar características específicas del proveedor, pero en este caso está vacío, lo que significa que se utilizarán las opciones predeterminadas.
 
+
 **2. Definición del grupo de recursos (azurerm_resource_group):**
 
     resource "azurerm_resource_group" "mi_rg" {
@@ -20,6 +21,8 @@ Este archivo de configuración está escrito en el lenguaje de definición de re
     }
 
 *Este bloque define un grupo de recursos en Azure con el nombre "mi-resource-group" y ubicación "East US".*
+
+
 **3. Definición de la red virtual (azurerm_virtual_network):**
 
     resource "azurerm_virtual_network" "mi_vnet" {
@@ -31,6 +34,7 @@ Este archivo de configuración está escrito en el lenguaje de definición de re
     
 *Este bloque define una red virtual en Azure con el nombre "mi-vnet", rango de direcciones IP "10.0.0.0/16", ubicación obtenida del grupo de recursos y asociada al grupo de recursos definido anteriormente.*
 
+
 **4. Definición de la subred (azurerm_subnet):**
 
     resource "azurerm_subnet" "mi_subnet" {
@@ -41,6 +45,8 @@ Este archivo de configuración está escrito en el lenguaje de definición de re
     }
     
 *Este bloque define una subred en Azure con el nombre "mi-subnet", rango de direcciones IP "10.0.1.0/24" y asociada a la red virtual definida anteriormente.*
+
+
 **5. Definición de la interfaz de red (azurerm_network_interface):**
 
     resource "azurerm_network_interface" "mi_nic" {
@@ -57,6 +63,8 @@ Este archivo de configuración está escrito en el lenguaje de definición de re
     
 
 *Este bloque define una interfaz de red en Azure con el nombre "mi-nic", ubicación obtenida del grupo de recursos y asociada al grupo de recursos definido anteriormente. Además, se configura una configuración de IP con asignación dinámica en la subred definida anteriormente.*
+
+
 **6. Definición de la máquina virtual (azurerm_virtual_machine):**
 
     resource "azurerm_virtual_machine" "mi_vm" {
